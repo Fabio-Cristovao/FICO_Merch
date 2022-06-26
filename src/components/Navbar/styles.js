@@ -5,14 +5,21 @@ const drawerWidth = 0;
 export default makeStyles((theme) => ({
   appBar: {
     boxShadow: 'none',
+    backgroundColor: '#a5e300',
     borderBottom: '1px solid rgba(0, 0, 0, 0.12)',
     [theme.breakpoints.up('sm')]: {
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
     },
   },
+  iconStyles: {
+    fontSize: '30px',
+    color: '#5a5aff',
+  },
   title: {
     flexGrow: 1,
+    color: '5a5aff',
+    fontSize: '30px',
     alignItems: 'center',
     display: 'flex',
     textDecoration: 'none',
@@ -20,6 +27,7 @@ export default makeStyles((theme) => ({
   image: {
     marginRight: '10px',
   },
+
   menuButton: {
     marginRight: theme.spacing(2),
     [theme.breakpoints.up('sm')]: {
