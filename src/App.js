@@ -75,7 +75,7 @@ const App = () => {
 
   return (
     <Router>
-      <div className={classes.websiteBackground}>
+      <div className={classes.root}>
         <CssBaseline />
         <Navbar totalItems={cart.total_items} handleDrawerToggle={handleDrawerToggle} />
         <Switch>

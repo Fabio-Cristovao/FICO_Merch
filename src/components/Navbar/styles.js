@@ -18,7 +18,7 @@ export default makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
-    color: '5a5aff',
+    color: '#5a5aff',
     fontSize: '30px',
     alignItems: 'center',
     display: 'flex',

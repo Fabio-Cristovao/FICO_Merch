@@ -20,8 +20,8 @@ const PrimarySearchAppBar = ({ totalItems }) => {
   const renderMobileMenu = (
     <Menu anchorEl={mobileMoreAnchorEl} anchorOrigin={{ vertical: 'top', horizontal: 'right' }} id={mobileMenuId} keepMounted transformOrigin={{ vertical: 'top', horizontal: 'right' }} open={isMobileMenuOpen} onClose={handleMobileMenuClose}>
       <MenuItem>
-        <IconButton component={Link} to="/cart" aria-label="Show cart items" color="primary">
-          <Badge badgeContent={totalItems} color="5a5aff">
+        <IconButton component={Link} to="/cart" aria-label="Show cart items">
+          <Badge badgeContent={totalItems}>
             <ShoppingCart />
           </Badge>
         </IconButton>
@@ -31,10 +31,10 @@ const PrimarySearchAppBar = ({ totalItems }) => {
   );
 
   return (
-    <>
+    <div>
       <AppBar position="fixed" className={classes.appBar} color="inherit">
         <Toolbar>
-          <Typography component={Link} to="/" variant="h6" className={classes.title} color="5a5aff">
+          <Typography component={Link} to="/" variant="h6" className={classes.title}>
             <img src={logo} alt="commerce.js" height="25px" className={classes.image} /> Commerce.js
           </Typography>
           <div className={classes.grow} />
@@ -50,7 +50,7 @@ const PrimarySearchAppBar = ({ totalItems }) => {
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
-    </>
+    </div>
   );
 };
 
