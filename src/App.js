@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { CssBaseline } from '@material-ui/core';
+import { createMuiTheme, CssBaseline, ThemeProvider } from '@material-ui/core';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import useStyles from './styles';
 import { Navbar, Products, Cart, Checkout } from './components';
@@ -7,6 +7,15 @@ import { commerce } from './lib/commerce';
 
 const App = () => {
   const classes = useStyles();
+  const theme = createMuiTheme({
+    typography: {
+      fontFamily: [
+        'MontSerrat',
+        'Roboto',
+        'sans-serif',
+      ].join(','),
+    },
+  });
 
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [products, setProducts] = useState([]);
@@ -73,24 +82,32 @@ const App = () => {
 
   const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
 
+
+
   return (
-    <Router>
-      <div className={classes.root}>
-        <CssBaseline />
-        <Navbar totalItems={cart.total_items} handleDrawerToggle={handleDrawerToggle} />
-        <Switch>
-          <Route exact path="/">
-            <Products products={products} onAddToCart={handleAddToCart} handleUpdateCartQty />
-          </Route>
-          <Route exact path="/cart">
-            <Cart cart={cart} onUpdateCartQty={handleUpdateCartQty} onRemoveFromCart={handleRemoveFromCart} onEmptyCart={handleEmptyCart} />
-          </Route>
-          <Route path="/checkout" exact>
-            <Checkout cart={cart} order={order} onCaptureCheckout={handleCaptureCheckout} error={errorMessage} />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <div className={classes.backgroundColor}>
+          <div className={classes.root}>
+            <ThemeProvider theme={theme}>
+              <CssBaseline />
+              <Navbar totalItems={cart.total_items} handleDrawerToggle={handleDrawerToggle} />
+              <Switch>
+                <Route exact path="/">
+                  <Products products={products} onAddToCart={handleAddToCart} handleUpdateCartQty />
+                </Route>
+                <Route exact path="/cart">
+                  <Cart cart={cart} onUpdateCartQty={handleUpdateCartQty} onRemoveFromCart={handleRemoveFromCart} onEmptyCart={handleEmptyCart} />
+                </Route>
+                <Route path="/checkout" exact>
+                  <Checkout cart={cart} order={order} onCaptureCheckout={handleCaptureCheckout} error={errorMessage} />
+                </Route>
+              </Switch>
+            </ThemeProvider>
+          </div>
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 };
 
