@@ -12,11 +12,10 @@ export default makeStyles(() => ({
     paddingTop: '56.25%', // 16:9
   },
   cardActions: {
-    marginBottom: '10px',
+    marginBottom: '30px',
     justifyContent: 'center',
     fontSize: '30px',
   },
   cardContent: {
-
   },
 }));
