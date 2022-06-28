@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { createMuiTheme, CssBaseline, ThemeProvider } from '@material-ui/core';
+import { createTheme, CssBaseline, ThemeProvider } from '@material-ui/core';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import useStyles from './styles';
 import { Navbar, Products, Cart, Checkout } from './components';
@@ -7,7 +7,7 @@ import { commerce } from './lib/commerce';
 
 const App = () => {
   const classes = useStyles();
-  const theme = createMuiTheme({
+  const theme = createTheme({
     typography: {
       fontFamily: [
         'MontSerrat',
@@ -15,6 +15,7 @@ const App = () => {
         'sans-serif',
       ].join(','),
     },
+    backgroundColor: '#fafaff',
   });
 
   const [mobileOpen, setMobileOpen] = React.useState(false);
