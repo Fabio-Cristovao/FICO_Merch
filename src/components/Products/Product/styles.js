@@ -2,8 +2,9 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles(() => ({
   root: {
-    maxWidth: '300px',
-    height: '400px',
+    margin: 'auto',
+    maxWidth: '345px',
+    height: 'auto',
     borderRadius: '12px',
     fontSize: '30px',
   },
@@ -12,10 +13,12 @@ export default makeStyles(() => ({
     paddingTop: '56.25%', // 16:9
   },
   cardActions: {
-    marginBottom: '30px',
     justifyContent: 'center',
     fontSize: '30px',
   },
   cardContent: {
+    display: 'flex',
+    flexDirection: 'column',
+    color: '#5a5aff',
   },
 }));

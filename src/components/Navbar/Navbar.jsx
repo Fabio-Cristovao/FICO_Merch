@@ -35,13 +35,13 @@ const PrimarySearchAppBar = ({ totalItems }) => {
       <AppBar position="fixed" className={classes.appBar} color="inherit">
         <Toolbar>
           <Typography component={Link} to="/" variant="h6" className={classes.title}>
-            <img src={logo} alt="commerce.js" height="25px" className={classes.image} /> Commerce.js
+            <img src={logo} alt="commerce.js" height="25px" className={classes.image} /> FICO Merchandising
           </Typography>
           <div className={classes.grow} />
           {location.pathname === '/' && (
             <div className={classes.button}>
               <IconButton component={Link} to="/cart" aria-label="Show cart items">
-                <Badge badgeContent={totalItems} color="secondary">
+                <Badge badgeContent={totalItems} sx={{ backgroundColor: '#5a5aff' }}>
                   <ShoppingCart className={classes.iconStyles} />
                 </Badge>
               </IconButton>
