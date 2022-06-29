@@ -2,7 +2,6 @@ import React from 'react';
 import { Container, Typography, Button, Grid, TableContainer, Table, TableBody, TableCell, TableHead, Box } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import { DataGrid } from '@material-ui/data-grid';
-import CartItem from './CartItem/CartItem';
 import useStyles from './styles';
 import { TableRow } from 'semantic-ui-react';
 import AddIcon from '@mui/icons-material/Add';
@@ -18,8 +17,8 @@ const Cart = ({ cart, onUpdateCartQty, onRemoveFromCart, onEmptyCart }) => {
   const handleRemoveFromCart = (lineItemId) => onRemoveFromCart(lineItemId);
 
   const renderEmptyCart = () => (
-    <Typography variant="subtitle1">You have no items in your shopping cart,
-      <Link className={classes.link} to="/">start adding some</Link>!
+    <Typography variant="subtitle1">Não tem items no carrinho,
+      <Link className={classes.link} to="/">volte à página principal!</Link>
     </Typography>
   );
 
@@ -27,14 +26,6 @@ const Cart = ({ cart, onUpdateCartQty, onRemoveFromCart, onEmptyCart }) => {
 
   const renderCart = () => (
     <div container sx={{ backgroundColor: '#5a5aff', height: '100vh' }}>
-      {/* <Grid container spacing={3}>
-        {cart.line_items.map((lineItem) => (
-          <Grid item xs={12} sm={4} key={lineItem.id}>
-            <CartItem item={lineItem} onUpdateCartQty={onUpdateCartQty} onRemoveFromCart={onRemoveFromCart} />
-          </Grid>
-        ))}
-      </Grid> 
-      */}
       <TableContainer>
         <Table>
           <TableHead>
@@ -88,18 +79,18 @@ const Cart = ({ cart, onUpdateCartQty, onRemoveFromCart, onEmptyCart }) => {
       </TableContainer>
 
       <div className={classes.cardDetails}>
-        <Typography variant="h4">Subtotal: {cart.subtotal.formatted_with_symbol}</Typography>
+        <Typography variant="h5" className={classes.title}>Subtotal: {cart.subtotal.formatted_with_symbol}</Typography>
         <div>
-          <Button className={classes.emptyButton} size="large" type="button" variant="contained" color="secondary" onClick={handleEmptyCart}>Empty cart</Button>
-          <Button className={classes.checkoutButton} component={Link} to="/checkout" size="large" type="button" variant="contained" color="primary">Checkout</Button>
+          <Button className={classes.emptyButton} size="large" type="button" variant="contained" style={{ backgroundColor: '#a5e300' }} onClick={handleEmptyCart}>Empty cart</Button>
+          <Button className={classes.checkoutButton} component={Link} to="/checkout" size="large" type="button" variant="contained" style={{ backgroundColor: '#a5e300' }}>Checkout</Button>
         </div>
       </div>
     </div>
   );
 
   return (
-    <Container>
-      <div className={classes.toolbar} />
+    <Container sx={{ backgroundColor: '#a5e300 !imporant', height: '100%' }}>
+      <div className={classes.toolbar} sx={{ backgroundColor: '#a5a5ff' }} />
       <Typography className={classes.title} variant="h3" gutterBottom>O seu carrinho de compras</Typography>
       {!cart.line_items.length ? renderEmptyCart() : renderCart()}
     </Container>

@@ -2,10 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { createTheme, CssBaseline, ThemeProvider } from '@material-ui/core';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import useStyles from './styles';
-import { Navbar, Products, Cart, Checkout } from './components';
+import { Navbar, Products, Cart, Checkout, Footer } from './components';
 import { commerce } from './lib/commerce';
 
 const App = () => {
+
+  const style = {
+    backgroundColor: 'blue',
+    width: '100px',
+    height: '100px',
+  }
   const classes = useStyles();
   const theme = createTheme({
     typography: {
@@ -15,7 +21,7 @@ const App = () => {
         'sans-serif',
       ].join(','),
     },
-    backgroundColor: '#fafaff',
+    backgroundColor: '#5a5aff',
   });
 
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -104,6 +110,7 @@ const App = () => {
                   <Checkout cart={cart} order={order} onCaptureCheckout={handleCaptureCheckout} error={errorMessage} />
                 </Route>
               </Switch>
+              <Footer />
             </ThemeProvider>
           </div>
         </div>
