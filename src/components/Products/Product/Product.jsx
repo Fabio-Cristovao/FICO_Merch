@@ -12,6 +12,7 @@ const Product = ({ product, onAddToCart }) => {
 
   const style = {
     display: 'flex',
+    flexDirection: 'row',
     position: 'absolute',
     top: '50%',
     left: '50%',
@@ -69,28 +70,29 @@ const Product = ({ product, onAddToCart }) => {
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
           className={classes.modalStyles}
-          style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
         >
-          <Box sx={style} style={{ display: 'flex', flexDirection: 'row' }}>
+          <Box sx={style} >
             <IconButton onClick={() => setOpen(false)} className={classes.cancelButton}>
               <CloseIcon />
             </IconButton>
             <Container>
               <Container>
-                <Typography id="modal-modal-title" variant="h6" component="h2">
-                  Text in a modal
-                </Typography>
-                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                  Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+                <Typography id="modal-modal-description" variant='h4' sx={{ mt: 2 }}>
+                  {product.name}
                 </Typography>
               </Container>
               <Container>
-                <Typography id="modal-modal-title" variant="h6" component="h2">
-                  Text in a modal
-                </Typography>
-                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                  Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-                </Typography>
+                <Card>
+                  <CardContent className={classes.descriptionContent}>
+                    <Typography variant='h5'>
+                      Imagens do produto:
+                    </Typography>
+                    <CardMedia className={classes.media} image={product.media.source} title={product.name} />
+                  </CardContent>
+                </Card>
+              </Container>
+              <Container>
+                <Typography dangerouslySetInnerHTML={{ __html: product.description }} variant="body2" color="textSecondary" component="p" />
               </Container>
             </Container>
           </Box>

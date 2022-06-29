@@ -28,4 +28,10 @@ export default makeStyles(() => ({
     right: 0,
     color: 'red',
   },
+  descriptionContent: {
+    display: 'flex',
+    flexDirection: 'column',
+    padding: '15px',
+    gap: '20px',
+  }
 }));
