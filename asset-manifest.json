@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "/FICO_Merch/static/js/main.5946fe35.chunk.js",
+    "main.js.map": "/FICO_Merch/static/js/main.5946fe35.chunk.js.map",
+    "runtime-main.js": "/FICO_Merch/static/js/runtime-main.a8906ddf.js",
+    "runtime-main.js.map": "/FICO_Merch/static/js/runtime-main.a8906ddf.js.map",
+    "static/js/2.e3ae1d35.chunk.js": "/FICO_Merch/static/js/2.e3ae1d35.chunk.js",
+    "static/js/2.e3ae1d35.chunk.js.map": "/FICO_Merch/static/js/2.e3ae1d35.chunk.js.map",
+    "index.html": "/FICO_Merch/index.html",
+    "precache-manifest.2df45e0fad844018f1b87bf65a19e518.js": "/FICO_Merch/precache-manifest.2df45e0fad844018f1b87bf65a19e518.js",
+    "service-worker.js": "/FICO_Merch/service-worker.js",
+    "static/js/2.e3ae1d35.chunk.js.LICENSE.txt": "/FICO_Merch/static/js/2.e3ae1d35.chunk.js.LICENSE.txt",
+    "static/media/commerce.png": "/FICO_Merch/static/media/commerce.422fec10.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a8906ddf.js",
+    "static/js/2.e3ae1d35.chunk.js",
+    "static/js/main.5946fe35.chunk.js"
+  ]
+}
