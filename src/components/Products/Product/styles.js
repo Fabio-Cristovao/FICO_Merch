@@ -18,7 +18,14 @@ export default makeStyles(() => ({
   },
   cardContent: {
     display: 'flex',
-    flexDirection: 'column',
     color: '#5a5aff',
+    margin: '10px',
+    gap: '10px',
+  },
+  cancelButton: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    color: 'red',
   },
 }));
